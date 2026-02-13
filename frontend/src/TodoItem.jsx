@@ -27,7 +27,7 @@ function TodoItem({todo, toggleDone, deleteTodo, addNewComment}) {
                 value={newComment}
                 onChange={(e) => {
                   const value = e.target.value;
-                  setNewComments(value);
+                  setNewComment(value);
                 }}
               />
               <button onClick={() => {

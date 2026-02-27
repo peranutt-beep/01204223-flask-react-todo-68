@@ -23,7 +23,7 @@ function LoginForm({loginUrl}) {
       if (response.ok) {
         const data = await response.json();
         console.log(data);
-        //alert("Login successful.  access token = " + data.access_token);
+        alert("Login successful.  access token = " + data.access_token);
         login(username, data.access_token);
         navigate('/');
       } else if (response.status === 401) {
@@ -36,6 +36,7 @@ function LoginForm({loginUrl}) {
 
   return (
     <form onSubmit={(e) => {handleLogin(e)}}>
+      {errorMessage && <p>{errorMessage}</p>}
       Username:
       <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
       <br/>
